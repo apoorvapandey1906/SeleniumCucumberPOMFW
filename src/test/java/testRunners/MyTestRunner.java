@@ -9,10 +9,14 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src/test/resources/AppFeatures"},
+		plugin = {"pretty" ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+		
+		//tags = "not @Skip",
+		monochrome = true,
 		glue = {"stepDefinitions","AppHooks"},
-		plugin = {"pretty" ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-		)
+		features = {"src/test/resources/AppFeatures/LoginPage.feature"}
+)
+		
 public class MyTestRunner {
 
 }

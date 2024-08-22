@@ -12,6 +12,7 @@ public class AccountPage {
 	private WebDriver driver;
 	
 	private By accountSections = By.xpath("//div[@id='center_column']//span");
+	private By contactUsLink = By.xpath("//a[@title='Contact us']");
 	
 	public AccountPage(WebDriver driver) {
 		this.driver = driver;
@@ -38,7 +39,10 @@ public class AccountPage {
 		return accountsList;
 	}
 	
-	
+	public ContactUsPage navigateToContactUsPage() {
+		driver.findElement(contactUsLink).click();
+		return new ContactUsPage(driver);
+	}
 	
 	
 	
